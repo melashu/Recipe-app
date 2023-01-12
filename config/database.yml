@@ -10,17 +10,20 @@ development:
   database: recipe_app
   adapter: postgresql
   encoding: unicode
-  port: 5432
+  port: 4556
   host : localhost
   username: postgres
-  password: postgres
+  password: meshu
 
 test:
   <<: *default
   database: recipe_test
   host : localhost
-  port: 5432
+  port: 4556
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: postgres
+  password: meshu
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
