@@ -1,0 +1,11 @@
+
+    <div class="d-flex gap-5 p-2 mb-3 align-items-center recipe-container text-capitalize">
+        <div class='p-2 d-grid' >
+          <p class='fs-5 fw-bold'><%=recipe.name %></p>
+          <p class='fs-5 fw-bold'>By <%=recipe.user.name %></p>
+        </div>
+        <%= link_to show_public_recipes_path(recipe), class:'w-50 text-sm-start fw-bold fs-5 lh-base' do%>
+            Total Food Item: <%= recipe.foods.size%> <br/>
+            Total Price: <%= recipe.user.price_calc%> <br/>
+        <%end%>
+    </div>

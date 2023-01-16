@@ -1,0 +1,29 @@
+<div class="container-fluid p-4">
+ <p class="text-center fs-4 fw-bold border-bottom border-secondary">Public Recipe Name: <%=@recipe.name%></p>
+  <div class="d-grid align-items-center p-3 mb-1 w-100 mx-auto fs-5 fw-bold">
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-1 d-flex justify-content-between align-items-center">
+          <p>Preparation Time: <%=@recipe.preparation_time.minute.in_hours%> hour</p>
+     <%=form_with do |f|%>
+      <div class="form-check form-switch">
+        <%= f.label :public, "Public", class: "form-check-label form-label fs-6 fw-bold" %>
+        <%= f.check_box :public, checked: @recipe.public, class: "form-check-input"%>
+     </div>
+      <%end%>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-1">
+       <p>Cooking Time: <%=@recipe.cooking_time.minute.in_hours%> hour</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-1">
+      Description: 
+       <span><%=@recipe.description%></span>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-1">
+      Prepared By: <%=@recipe.user.name%>
+       
+    </div>
+
+
+  </div>
+
+
+</div>

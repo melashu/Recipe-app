@@ -1,0 +1,42 @@
+<p class="text-center fs-2 fw-bold">Foods Registration</p>
+<%= form_with url: foods_path, model: @new_food, method: :post, class: 'p-2 m-4' do |f|%>
+  <%if @new_food.errors.any?%>
+
+    <div class='alert alert-danger'>
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+
+      <% @new_food.errors.full_messages.each do |msg|%>
+        <p><%=msg%></p>
+      <%end%>
+    </div>
+  <%end%>
+
+  <div class="mb-2 g-2">
+   <%= f.label :name, "", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+     <%= f.text_field :name, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'name '%>
+    </div>
+  </div>
+
+  <div class="mb-2 g-2">
+  <%= f.label :measurement_unit, "Measurment Unit", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.text_field :measurement_unit, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'measurment unit '%>
+    </div>
+  </div>
+
+  <div class="mb-2 g-2">
+   <%= f.label :price, "Unit Price", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.number_field :price, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'price'%>
+    </div>
+  </div>
+
+  <div class="mb-2 g-2">
+   <%= f.label :quantity, "Quantity", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.number_field :quantity, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'quantity'%>
+    </div>
+  </div>
+  <%= f.submit class: 'btn btn-primary'%>
+<% end %>

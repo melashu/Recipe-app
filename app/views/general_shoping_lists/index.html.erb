@@ -1,0 +1,31 @@
+<div>
+<p class='fs-5 fw-bold p-3 text-center border-bottom border-secondary'>Here is your shoping list</p>
+<div class='d-flex justify-content-evenly'>
+<p> Amount of total item to buy: <%=@total_item%></p>
+<p> Total Price: <%=@total%></p>
+
+
+</div>
+
+<table class="table table-striped">
+   <thead>
+      <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+    </tr>
+   </thead>
+   <tbody>
+  <% @shopping_list.each do |key, value| %>
+  <% if value[:quantity] - value[:food].quantity > 0%>
+      <tr>
+      <td><%=  value[:food].name%></td>
+      <td><%= value[:quantity]-value[:food].quantity%> <%=value[:food].measurement_unit%></td>
+      <td><%= (value[:quantity]-value[:food].quantity)*value[:food].price%> Br</td>
+     </tr>
+     <%end%>
+<%end%>
+   </tbody>
+</table>
+
+</div>

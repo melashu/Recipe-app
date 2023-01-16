@@ -1,0 +1,28 @@
+<p class="text-center fs-2 fw-bold">Add recipe ingredient </p>
+<%= form_with url: create_ingredient_path, model: @recipe_food, method: :post, class: 'p-2 m-4' do |f|%>
+  <%if f.object.errors.any?%>
+
+    <div class='alert alert-danger'>
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+
+      <% f.object.errors.full_messages.each do |msg|%>
+        <p><%=msg%></p>
+      <%end%>
+    </div>
+  <%end%>
+ 
+
+  <div class="mb-2 g-2">
+   <%= f.label :quantity, "Quantity", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.number_field :quantity, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'quantity'%>
+    </div>
+  </div>
+  <div class="mb-2 g-2">
+   <%= f.label :select_food, "Select Food", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+     <%=f.collection_select :food_id, @all_food, :id, :name, {prompt: true, class:'form-select',  aria_label: 'something'}%>
+    </div>
+  </div>
+  <%= f.submit class: 'btn btn-primary'%>
+<% end %>

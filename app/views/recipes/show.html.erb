@@ -1,0 +1,51 @@
+<div class="container-fluid p-4">
+ <p class="text-center fs-4 fw-bold border-bottom border-secondary">Recipe Name: <%=@recipe.name%></p>
+  <div class="d-grid p-3 mb-2 w-100 mx-auto fs-5 fw-bold">
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-2 d-flex justify-content-between align-items-center">
+          <p>Preparation Time: <%=@recipe.preparation_time.minute.in_hours%> hour</p>
+     <%=form_with do |f|%>
+      <div class="form-check form-switch">
+        <%= f.label :public, "Public", class: "form-check-label form-label fs-6 fw-bold" %>
+        <%= f.check_box :public, checked: @recipe.public, class: "form-check-input"%>
+     </div>
+      <%end%>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-2">
+       <p>Cooking Time: <%=@recipe.cooking_time.minute.in_hours%> hour</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-2">
+      Description: <br/>
+       <p><%=@recipe.description%></p>
+    </div>
+
+  </div>
+  <div class="border-bottom border-secondary pb-3 d-flex justify-content-end">
+     <%= link_to "Add Food", new_ingredient_path(@recipe.id), class: 'btn btn-primary'%>
+  </div>
+
+     <%= link_to "Back", :back, class: 'btn btn-primary'%>
+
+<table class="table table-striped">
+   <thead>
+      <tr>
+      <th>#</th>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+      <th>Action</th>
+    </tr>
+   </thead>
+   <tbody>
+  <% @recipe.recipe_foods.each_with_index do |recipe_food, index| %>
+      <tr>
+       <td><%=index+1%></td>
+      <td><%= recipe_food.food.name%></td>
+      <td><%= recipe_food.quantity%> <%=recipe_food.food.measurement_unit%></td>
+      <td><%= recipe_food.food.price%> </td>
+      <td><%= button_to 'Delete', delete_ingredient_path(@recipe.id,recipe_food.id), method: :delete, class: 'btn btn-danger',data: { turbo_confirm: "Are you sure?"} %></td>
+     </tr>
+    <% end %>
+   </tbody>
+</table>
+
+</div>

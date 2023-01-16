@@ -1,0 +1,2 @@
+Recipe.create!(name:'cooking', preparation_time: 1, cooking_time: 1,description:'show', user_id: User.last.id, public: true) ;
+Food.create!(name:'Apple',measurement_unit:'g',price: 15.5,quantity: 5, user_id: User.last.id)

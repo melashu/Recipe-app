@@ -1,0 +1,43 @@
+<p class="text-center fs-2 fw-bold">Recipes Registration</p>
+
+<%= form_with url: recipes_path, model: @recipe, method: :post, class: 'p-2 m-4' do |f|%>
+  <%if @recipe.errors.any?%>
+
+    <div class='alert alert-danger'>
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+
+    <% @recipe.errors.full_messages.each do |msg|%>
+      <p><%=msg%></p>
+     <%end%>
+    </div>
+  <%end%>
+  <div class="mb-2 g-2">
+  <%= f.label :recipe, "Recipe Name", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.text_field :name, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
+    </div>
+  </div>
+  <div class="mb-2 g-2">
+  <%= f.label :preparation, "Preparation Time in minute", class: "col-sm-2 col-lg-4 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.number_field :preparation_time, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. 60'%>
+    </div>
+  </div>
+  <div class="mb-2 g-2">
+  <%= f.label :cooking, "Cooking Time in minute", class: "col-sm-2 col-lg-4 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.number_field :cooking_time, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. 30'%>
+    </div>
+  </div>
+  <div class="mb-2 g-2">
+  <%= f.label :description, "Description", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+    <div class="col-sm-10">
+    <%= f.text_area :description, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Step 1....'%>
+    </div>
+  </div>
+  <div class="form-check form-switch ml-3 mt-4 mb-4">
+  <%= f.label :public, "Do you need to make this recipes public?", class: "form-check-label form-label fs-6 fw-bold" %>
+  <%= f.check_box :public, class: "form-check-input"%>
+  </div>
+  <%= f.submit class: 'btn btn-primary'%>
+<%end%>

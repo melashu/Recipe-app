@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  preparation_time: 2023-01-02 17:19:44
+  cooking_time: 2023-01-02 17:19:44
+  description: MyString
+  public: false
+  user: one
+
+two:
+  name: MyString
+  preparation_time: 2023-01-02 17:19:44
+  cooking_time: 2023-01-02 17:19:44
+  description: MyString
+  public: false
+  user: two

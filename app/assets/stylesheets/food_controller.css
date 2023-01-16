@@ -1,0 +1,12 @@
+.conatiner {
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+.btn .btn-primary {
+  margin-right: 200px;
+  margin-top: 10000px;
+}

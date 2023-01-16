@@ -1,0 +1,9 @@
+<div class="container-fluid">
+ <div class="d-flex justify-content-end p-3">
+    <%=link_to "Add Recipes", new_recipe_path, class: "btn btn-primary"%>
+ </div>
+
+  <%@all_recipes.each do |recipe|%>
+   <%= render "recipe", recipe: recipe%>
+  <%end%>
+</div>

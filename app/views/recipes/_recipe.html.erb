@@ -1,0 +1,10 @@
+
+    <div class="d-flex  gap-5 p-2 mb-3 align-items-center recipe-container">
+        <div class='p-2 d-grid' >
+          <p class='fs-4 fw-bold'><%=recipe.name %></p>
+          <%=button_to "Remove", recipe_path(recipe), method: :delete, class: 'btn btn-primary' , data: { turbo_confirm: "Are you sure?"} %>
+        </div>
+        <%= link_to recipe_path(recipe), class:'w-50 text-sm-start fw-bold fs-5 lh-base' do%>
+        <%= recipe.description%>
+        <%end%>
+    </div>

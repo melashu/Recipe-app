@@ -1,0 +1,9 @@
+<div class="container-fluid p-3">
+
+<h1 class='text-center fs-4 p-2 border-bottom border-secondary'>List of public recipes</h1>
+ 
+ <%@public_recipe.each do |recipe|%>
+   <%= render "public", recipe: recipe%>
+  <%end%>
+  </div>
+
