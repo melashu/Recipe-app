@@ -1,32 +1,62 @@
-# 📖 [Recipe App]<a name="readme-top"></a>
 
-<!-- <div align="center">
-
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div> -->
+<a name="readme-top"></a>
 
 
-The recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
+# 📗 Table of Contents
 
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Recipe App ](#-recipe-)
+  - [🛠 Built With ](#-built-with-)
+  - [🚀 Live Version ](#-live-demo-)
+  - [Tech Stack ](#tech-stack-)
+  - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
+
+# 📖 Recipe <a name="about-project"></a>
+
+Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. The application is created using Ruby on Rails framework.
+
+## 🚀 Live Version <a name="live-demo"></a>
+
+ - [Go live](https://recipe-nn14.onrender.com)
+ 
+ To access the page you can signup using your `gmail account` or you can use the folloeing e-mail and password.
+ 
+ `e-mail: meshu.amare@gmail.com`
+ `Password :12345678`
+ 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+- Ruby
+- Rails 
+- HTML
+- SCSS
+- Bootstrap
+## Tech Stack <a name="tech-stack"></a>
+
+> Describe the tech stack and include only the relevant sections that apply to your project.
 
 <details>
-  <summary>BackEnd</summary>
+  <summary>Client</summary>
   <ul>
-    <li><a href="https://railsguide.com/">Rails</a></li>
+    <li>HTML, JavaScript, and CSS</li>
   </ul>
 </details>
 
 <details>
-  <summary>Test</summary>
+  <summary>Server</summary>
   <ul>
-    <li><a href="https://rspec.com/">RSPEC</a></li>
+    <li><a href="https://rubyinstaller.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -37,84 +67,45 @@ The recipe app keeps track of all your recipes, ingredients, and inventory. It w
   </ul>
 </details>
 
-<!-- Features -->
+## Key Features <a name="key-features"></a>
 
-### Key Features <a name="key-features"></a>
+> The key features of this app.
 
-- **[Add Food]** - Add Food.
-- **[Display Foods]** - Display all foods.
-- **[Add Recipe]** - Add Recipe.
-- **[Display all recipe foods]** - Display all recipe foods.
+- AAA
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Version <a name="live-demo"></a>
-
-- [Comming soon]()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
+To get a local copy up and running, follow these steps.
 
-If you dont have Ruby installed on your computer, you can download it from [here](https://www.ruby-lang.org/en/downloads/).
+### Prerequisites
 
-If you dont have Rails installed on your computer, you can download it from [here](https://rubyonrails.org/).
+In order to run this project you need to:
+run `bunlder install`
 
-If you dont have PostgreSQL installed on your computer, you can download it from [here](https://www.postgresql.org/download/).
+### Setup
 
-If you have installed git you can clone the code to your machine, or download a ZIP of all the files directly.
+Clone this repository to your desired folder:
 
+`https://github.com/melashu/Recipe-app.git`
 
-> `NOTE:` _You may need to run the following commands in the project directory to install the required gems and run the application:_
+cd `Recipe-app`
 
-1. Install gem packages with:
+### Usage
 
-```
-bundle install
-```
+To run the project localy, execute the following command:
 
-2. Open the config/database.yml file in the project directory and change the username and password to your PostgreSQL username and password.
-Edit the default section of the file to look like this:
-    
-```
-  default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <your PostgreSQL role username>
-  password: <your PostgreSQL role password>
+`rails db:create db:migrate db:seed`
 
-```
+then 
 
-3. Create the database with:
+`rails server` or `rails s`
 
-```
-rails db:create
-```
-
-4. Start the development server
-
-```
-rails server
-```
-
-5. Open the app in your browser at http://localhost:3000
 ### Run tests
 
 To run tests, run the following command:
-rspec
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
+`Rspec spec`
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -130,68 +121,31 @@ rspec
 - Twitter: [@meshu102](https://twitter.com/meshu102)
 - LinkedIn: [Melashu Amare](https://www.linkedin.com/in/melashu-amare/)
 
-
-  
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Update recipe]**
-- [ ] **[Update inventory]**
+> In the future I need to improve the following features.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
+- [ ] **Add Google, Github and Twitter authentication.**
+- [ ] **Allow users to update their profile.**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
+Feel free to check the [issues page.](https://github.com/melashu/Btracker/issues)
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project give as a star! ⭐️
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
+Give a star if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- Microverse
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ <a name="faq"></a>
-
-- **[How I can run this project?]**
-
-  - [After cloning repository, run rails server.]
-
-- **[Can I add likes on post?]**
-
-  - [You can add likes and comments on a post.]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
+I would like to thank Microverse for the project guidelines.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
