@@ -26,3 +26,7 @@ a:hover {
 .recipe-container {
   border: 3px solid #1c6ea442;
 }
+
+main{
+  height: 75vh;
+}
