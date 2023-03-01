@@ -30,3 +30,10 @@ a:hover {
 main{
   min-height: 75vh;
 }
+.warning{
+  font-style: italic;
+  padding: 5px;
+  color: #f8a407;
+  font-size: 14px;
+  border: #f8a407 2px solid;
+}
